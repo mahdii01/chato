@@ -19,7 +19,15 @@ services:
       - "6379:6379"
     volumes:
       - redis_data:/data
+  redisinsight:
+    image: redis/redisinsight:latest
+    container_name: my-redis-insight
+    ports:
+      - "8001:8001"
+    volumes:
+      - redisinsight-data:/data
 
 volumes:
   mongodb_data:
   redis_data:
+  redisinsight-data:
